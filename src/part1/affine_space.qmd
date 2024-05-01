@@ -1,0 +1,137 @@
+---
+title: "아핀 기하학"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+곡선과 표면은 일반적으로 점들(points)로 구성된 공간에 존재하는 특별한 속성을 가진 점들의 집합으로 간주된다. 일반적으로 translations, rotations, projections 등과 같은 특정 변환 하에서 불변하는 기하학적 특성이 중요하다. 점으로 이루어진 공간을 소위 벡터 공간으로 모델링할 수 있지만 이는 여러 가지 이유로 그다지 만족스럽지 않다. 한 가지 중요한 이유는 원점이라고 불리는 영 벡터($\boldsymbol{0}$)에 해당하는 점이 실제로 특권을 가질 이유가 없음에도 특별한 역할을 하기 때문이다. 또 다른 이유는 parallelism 과 같은 특정 개념이 어색한 방식으로 처리된다는 것이다. 그러나 더 중요한 이유는 벡터 공간과 아핀 공간이 실제로 다른 기하학적 구조를 가지고 있다는 것이다. 벡터 공간의 기하학적 속성은 전단사 선형 맵 그룹에서 불변인 반면, 아핀 공간의 기하학적 속성은 전단사 아핀 맵 그룹에서 불변하며 이 두 그룹은 동형이 아니다. 대략적으로 말하면 선형 맵보다 아핀 맵이 더 많다.
+
+아핀 공간은 기하학을 수행하기 위한 더 나은 틀을 제공한다. 특히 점, 곡선, 표면 등을 본질적인 방식, 즉 특정 좌표계의 선택과 관계없이 처리하는 것이 가능하다. 물리학에서와 마찬가지로 이것은 실제로 무슨 일이 일어나고 있는지 이해하는 데 매우 바람하다. 물론 최종적으로 계산을 수행하려면 좌표계를 선택해야 하지만 실제로 필요할 때까지는 좌표계에 의존하려는 유혹을 물리치는 법을 배워야 한다. 아핀 공간은 무엇보다도 움직임, 궤적, 물리적 힘을 다루는 데 적합하다. 따라서 아핀 기하학은 운동학, 역학 및 기타 물리학 부분(예: 탄성)을 깔끔하게 표현하는 데 매우 중요하게 된다.
+
+</br>
+
+## 아핀 공간의 정의와 성질
+
+### 아핀 공간의 정의와 기본적 성질
+
+벡터를 다룰 때 벡터공간을 정의하는 것처럼 아핀공간을 정의하자. 아핀 공간은 어떤 벡터 공간에 대해 정의하는 것이 가장 깔끔하다. 아핀 공간에 대해 여러가지 동등한 정의가 존재하지만 다음의 정의를 따른다.
+
+
+::: {.callout-note appearance="minimal"}
+
+::: {#def-affine_space}
+
+#### 아핀 공간
+
+벡터공간 $E$ 에 포함되는 원소를 모두 포함하는 집합 $\mathcal{E}$ 에 $\Theta : \mathcal{E} \times \mathcal{E} \to E$ 인 사상이 다음을 만족하면 $\mathcal{E}$ 를 **아핀 공간(affine space)** 라고 한다.
+
+&emsp; ($1$) 임의의 고정된 $A\in E$ 에 대해 $\Theta_A(B) = \Theta(A,\,B)$ 는 전단사이다.
+
+&emsp; ($2$) 각각의 $A,\,B,\,C\in \mathcal{E}$ 에 대해 $\Theta (A,\,C) + \Theta(C,\,B) = \Theta(A, C)$ 이다. 
+
+이 때 아핀 공간 $\mathcal{E}$ 를 $\langle \mathcal{E},\, E,\,\Theta\rangle$ 로 표현하며 $E$ 를 $\mathcal{E}$ 의 **방향(direction)** 혹은 **내재하는 벡터공간 (underlying vector space)** 라고 한다. $\mathcal{E}$ 의 원소를 **점(point)** 이라고 하며 $E$ 의 차원을 $\mathcal{E}$ 의 차원 이라고 한다. 그리고 $\Theta (A,\,B)$ 를 $\overrightarrow{AB}$ 로 쓴다.
+:::
+:::
+
+</br>
+
+![아핀공간과 벡터공간](images/fig-affine_space_and_vector_space.png){#fig-affine_space_and_vector_space width=550}
+
+</br>
+
+::: {#prp-affile_space_1}
+여기서 ($2$) 를 **Chasles' relation** 이라고 한다. $\Theta(A, A)=\overrightarrow{AA}=\overrightarrow{0}$ 이다. 또한 $\overrightarrow{AC}=-\overrightarrow{CA}$ 이다.
+
+:::
+
+::: {.proof}
+
+$A=B=C$ 라 놓으면 $\overrightarrow{AA}=0$ 임을 보일 수 있다. 또한 $B=A$ 로 놓으면 $\overrightarrow{AC}+\overrightarrow{CA}= \overrightarrow{AA}=\overrightarrow{0}$ 이므로 $\overrightarrow{AC}= - \overrightarrow{CA}$ 이다. $\square$
+
+:::
+
+</br>
+
+:::{#exm-affine_space_1}
+
+모든 벡터 공간 $V$ 는 $\Theta (u,\,v) = u-v$ 에 대해 아핀공간이다.
+
+:::
+
+</br>
+
+::: {#exm-affine_space_2}
+
+벡터공간 $E_1,\,E_2$ 에 대한 아핀 공간 $\mathcal{E}_1 = (E_1,\,\Theta_1),\,\mathcal{E}_2 = (E_2,\,\Theta_2)$ 를 생각하자. 데카르트곱 $E_1 \times E_2$ 은 벡터공간이며 여기에 $\Theta : (\mathcal{E}_1 \times \mathcal{E}_2) \times (\mathcal{E}_1 \times \mathcal{E}_2) \to E_1 \times E_2$ 를
+
+$$
+\Theta ((A, B),\, (C,\,D)) = (\Theta_1(A, B),\, \Theta_2(C,\,D))
+$$
+
+로 정의한다면 $\mathcal{E}_1 \times \mathcal{E}_2 = (E_1 \times E_2,\, \Theta)$ 인 아핀공간이다.
+
+:::
+
+</br>
+
+::: {#prp-parallelogram_rule}
+
+#### 평행사변형 규칙
+
+아핀 공간 $\mathcal{E}$ 와 $A,\,B,\,A',\,B'\in \mathcal{E}$ 에 대해 다음이 성립한다. 
+
+$$
+\overrightarrow{AB}=\overrightarrow{A'B'} \iff \overrightarrow{AA'}=\overrightarrow{BB'}.
+$$
+
+:::
+
+::: {.proof}
+
+$\overrightarrow{AB}=\overrightarrow{A'B'}$ 이라면 
+
+$$
+\overrightarrow{AA'}=\overrightarrow{AB}+\overrightarrow{BB'}+\overrightarrow{B'A'} = \overrightarrow{A'B'}  +\overrightarrow{BB'}+\overrightarrow{B'A'} = \overrightarrow{BB'}
+$$
+
+이다. 같은 방식으로 역을 증명 할 수 있다. $\square$
+
+:::
+
+
+</br>
+
+::: {#prp-addition_of_affine_and_vector}
+아핀 공간 $\langle \mathcal{E},\,  E, \Theta\rangle$ 에 대해 $A\in \mathcal{E},\, u\in E$ 일 때 $\overrightarrow{AB}=u$ 를 만족하는 $B\in \mathcal{E}$ 가 유일하게 존재한다. 이 때 $B=A+u$ 라고 쓴다.
+
+:::
+
+::: {.proof}
+trivial
+:::
+
+
+
+### 아핀 공간의 벡터공간화
+
+아핀 공간을 쉽게 설명하면 영벡터가 없는 벡터공간이라고들 한다. 그렇다면 아핀 공간에 어떤 임의의 영벡터를 정하면 아핀공간은 벡터공간이 될까? 정답은 그렇다 이다. 이를 아핀 공간의 **벡터공간화 (vectorializatin)** 이라고 한다.
+
+::: {.callout-note appearance="minimal"}
+::: {#def-vectorialization}
+
+#### 벡터공간화 
+
+아핀 공간 $\mathcal{E}$ 의 한 점 $A\in \mathcal{E}$ 에 대해 아래와 같은 집합 $\mathcal{E}_A$ $\mathcal{E}$ 의 $A$ 에 대한 **벡터공간화 (vectorialization)** 이라고 한다.
+
+$$
+\mathcal{E}_A = \{\overrightarrow{AX} : X\in \mathcal{E}\}.
+$$
+
+:::
+:::
+
+
+벡터 공간 $E$ 에 대해 아핀 공간 $\langle \mathcal{E},\, E,\, \Theta\rangle$ 은 유일하게 정해지기 때문에 $E$ 에 대한 자연스러운 아핀 구조가 존재한다고 할 수 있다. 그러나 이 아핀 공간에 대한 벡터공간화는 원점이 되는 벡터의 선택에 따라 무수히 많기 때문에 아핀 공간에 대한 하연스러운 벡터 구조는 존재하지 않는다고 말할 수 있다.
+

@@ -1,0 +1,76 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "기하학",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "src/part1/part1.html",
+    "href": "src/part1/part1.html",
+    "title": "기하학",
+    "section": "",
+    "text": "Audin (2002) 에 기초하여 기하학에 대해 다룬다\n\n\n\n\nAudin, M. 2002. Geometry. Universitext. Springer Berlin Heidelberg. https://books.google.co.kr/books?id=U_cTJMCIzdUC.",
+    "crumbs": [
+      "기하학"
+    ]
+  },
+  {
+    "objectID": "src/part1/affine_space.html",
+    "href": "src/part1/affine_space.html",
+    "title": "1  아핀 기하학",
+    "section": "",
+    "text": "1.1 아핀 공간의 정의와 성질",
+    "crumbs": [
+      "기하학",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>아핀 기하학</span>"
+    ]
+  },
+  {
+    "objectID": "src/figure/figure.html",
+    "href": "src/figure/figure.html",
+    "title": "Figure",
+    "section": "",
+    "text": "tikz 를 이용한 그림",
+    "crumbs": [
+      "Figure"
+    ]
+  },
+  {
+    "objectID": "src/figure/figure_part1_1.html",
+    "href": "src/figure/figure_part1_1.html",
+    "title": "2  Geometry Figure",
+    "section": "",
+    "text": "코드\n```{r, engine = 'tikz'}\n#| label: fig-affine_space_and_vector_space\n#| code-fold: true\n#| output: asis\n#| fig-width: 6\n#| fig-align: center\n#| fig-cap: \"아핀 공간과 벡터 공간\"\n\n\n\\begin{tikzpicture}[scale=4]\n\\usetikzlibrary {arrows.meta}\n\\usetikzlibrary {calc}\n\n\\begin{scope}[]\n\\draw[thick] (0, 0) -- (0.3, 1) -- (1.5, 1) -- (1.2, 0) -- cycle;\n\\fill[black] (0.4, 0.2) circle (0.015cm) node[below] {$A$};\n\\fill[black] (1.1, 0.7) circle (0.015cm) node[below] {$B$};\n\\node[right] at (1.0, 0.1) {$\\mathcal{E}$};\n\\node[] at (0.75, -0.2) {($a$) Affine Space};\n\\end{scope}\n\n\n\\begin{scope}[shift={(1.7,0)}]\n\\draw[thick] (0, 0) -- (0.3, 1) -- (1.5, 1) -- (1.2, 0) -- cycle;\n\\draw[black, -{Stealth[length=3mm]}] (0.4, 0.2) -- (1.1, 0.7);\n\\node[below, scale=1.1] at (0.75, 0.45) {$\\overrightarrow{AB}$}\n;\\node[right] at (1.0, 0.1) {$E$};\n\\node[] at (0.75, -0.2) {($b$) Vector Space};\n\\end{scope}\n\\end{tikzpicture}\n```\n\n\n\n\n\n\n\n그림 2.1: 아핀 공간과 벡터 공간",
+    "crumbs": [
+      "Figure",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Geometry Figure</span>"
+    ]
+  },
+  {
+    "objectID": "src/part1/affine_space.html#아핀-공간의-정의와-성질",
+    "href": "src/part1/affine_space.html#아핀-공간의-정의와-성질",
+    "title": "1  아핀 기하학",
+    "section": "",
+    "text": "1.1.1 아핀 공간의 정의와 기본적 성질\n벡터를 다룰 때 벡터공간을 정의하는 것처럼 아핀공간을 정의하자. 아핀 공간은 어떤 벡터 공간에 대해 정의하는 것이 가장 깔끔하다. 아핀 공간에 대해 여러가지 동등한 정의가 존재하지만 다음의 정의를 따른다.\n\n\n\n\n\n\n\n정의 1.1 (아핀 공간) 벡터공간 \\(E\\) 에 포함되는 원소를 모두 포함하는 집합 \\(\\mathcal{E}\\) 에 \\(\\Theta : \\mathcal{E} \\times \\mathcal{E} \\to E\\) 인 사상이 다음을 만족하면 \\(\\mathcal{E}\\) 를 아핀 공간(affine space) 라고 한다.\n  (\\(1\\)) 임의의 고정된 \\(A\\in E\\) 에 대해 \\(\\Theta_A(B) = \\Theta(A,\\,B)\\) 는 전단사이다.\n  (\\(2\\)) 각각의 \\(A,\\,B,\\,C\\in \\mathcal{E}\\) 에 대해 \\(\\Theta (A,\\,C) + \\Theta(C,\\,B) = \\Theta(A, C)\\) 이다.\n이 때 아핀 공간 \\(\\mathcal{E}\\) 를 \\(\\langle \\mathcal{E},\\, E,\\,\\Theta\\rangle\\) 로 표현하며 \\(E\\) 를 \\(\\mathcal{E}\\) 의 방향(direction) 혹은 내재하는 벡터공간 (underlying vector space) 라고 한다. \\(\\mathcal{E}\\) 의 원소를 점(point) 이라고 하며 \\(E\\) 의 차원을 \\(\\mathcal{E}\\) 의 차원 이라고 한다. 그리고 \\(\\Theta (A,\\,B)\\) 를 \\(\\overrightarrow{AB}\\) 로 쓴다.\n\n\n\n\n\n\n\n\n\n\n\n그림 1.1: 아핀공간과 벡터공간\n\n\n\n\n\n명제 1.1 여기서 (\\(2\\)) 를 Chasles’ relation 이라고 한다. \\(\\Theta(A, A)=\\overrightarrow{AA}=\\overrightarrow{0}\\) 이다. 또한 \\(\\overrightarrow{AC}=-\\overrightarrow{CA}\\) 이다.\n\n\n(증명). \\(A=B=C\\) 라 놓으면 \\(\\overrightarrow{AA}=0\\) 임을 보일 수 있다. 또한 \\(B=A\\) 로 놓으면 \\(\\overrightarrow{AC}+\\overrightarrow{CA}= \\overrightarrow{AA}=\\overrightarrow{0}\\) 이므로 \\(\\overrightarrow{AC}= - \\overrightarrow{CA}\\) 이다. \\(\\square\\)\n\n\n\n보기 1.1 모든 벡터 공간 \\(V\\) 는 \\(\\Theta (u,\\,v) = u-v\\) 에 대해 아핀공간이다.\n\n\n\n보기 1.2 벡터공간 \\(E_1,\\,E_2\\) 에 대한 아핀 공간 \\(\\mathcal{E}_1 = (E_1,\\,\\Theta_1),\\,\\mathcal{E}_2 = (E_2,\\,\\Theta_2)\\) 를 생각하자. 데카르트곱 \\(E_1 \\times E_2\\) 은 벡터공간이며 여기에 \\(\\Theta : (\\mathcal{E}_1 \\times \\mathcal{E}_2) \\times (\\mathcal{E}_1 \\times \\mathcal{E}_2) \\to E_1 \\times E_2\\) 를\n\\[\n\\Theta ((A, B),\\, (C,\\,D)) = (\\Theta_1(A, B),\\, \\Theta_2(C,\\,D))\n\\]\n로 정의한다면 \\(\\mathcal{E}_1 \\times \\mathcal{E}_2 = (E_1 \\times E_2,\\, \\Theta)\\) 인 아핀공간이다.\n\n\n\n명제 1.2 (평행사변형 규칙) 아핀 공간 \\(\\mathcal{E}\\) 와 \\(A,\\,B,\\,A',\\,B'\\in \\mathcal{E}\\) 에 대해 다음이 성립한다.\n\\[\n\\overrightarrow{AB}=\\overrightarrow{A'B'} \\iff \\overrightarrow{AA'}=\\overrightarrow{BB'}.\n\\]\n\n\n(증명). \\(\\overrightarrow{AB}=\\overrightarrow{A'B'}\\) 이라면\n\\[\n\\overrightarrow{AA'}=\\overrightarrow{AB}+\\overrightarrow{BB'}+\\overrightarrow{B'A'} = \\overrightarrow{A'B'}  +\\overrightarrow{BB'}+\\overrightarrow{B'A'} = \\overrightarrow{BB'}\n\\]\n이다. 같은 방식으로 역을 증명 할 수 있다. \\(\\square\\)\n\n\n\n명제 1.3 아핀 공간 \\(\\langle \\mathcal{E},\\,  E, \\Theta\\rangle\\) 에 대해 \\(A\\in \\mathcal{E},\\, u\\in E\\) 일 때 \\(\\overrightarrow{AB}=u\\) 를 만족하는 \\(B\\in \\mathcal{E}\\) 가 유일하게 존재한다. 이 때 \\(B=A+u\\) 라고 쓴다.\n\n\n(증명). trivial\n\n\n\n1.1.2 아핀 공간의 벡터공간화\n아핀 공간을 쉽게 설명하면 영벡터가 없는 벡터공간이라고들 한다. 그렇다면 아핀 공간에 어떤 임의의 영벡터를 정하면 아핀공간은 벡터공간이 될까? 정답은 그렇다 이다. 이를 아핀 공간의 벡터공간화 (vectorializatin) 이라고 한다.\n\n\n\n\n\n\n\n정의 1.2 (벡터공간화) 아핀 공간 \\(\\mathcal{E}\\) 의 한 점 \\(A\\in \\mathcal{E}\\) 에 대해 아래와 같은 집합 \\(\\mathcal{E}_A\\) \\(\\mathcal{E}\\) 의 \\(A\\) 에 대한 벡터공간화 (vectorialization) 이라고 한다.\n\\[\n\\mathcal{E}_A = \\{\\overrightarrow{AX} : X\\in \\mathcal{E}\\}.\n\\]\n\n\n\n\n벡터 공간 \\(E\\) 에 대해 아핀 공간 \\(\\langle \\mathcal{E},\\, E,\\, \\Theta\\rangle\\) 은 유일하게 정해지기 때문에 \\(E\\) 에 대한 자연스러운 아핀 구조가 존재한다고 할 수 있다. 그러나 이 아핀 공간에 대한 벡터공간화는 원점이 되는 벡터의 선택에 따라 무수히 많기 때문에 아핀 공간에 대한 하연스러운 벡터 구조는 존재하지 않는다고 말할 수 있다.",
+    "crumbs": [
+      "기하학",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>아핀 기하학</span>"
+    ]
+  },
+  {
+    "objectID": "src/part1/affine_space.html#section",
+    "href": "src/part1/affine_space.html#section",
+    "title": "1  아핀 기하학",
+    "section": "1.2 ",
+    "text": "1.2",
+    "crumbs": [
+      "기하학",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>아핀 기하학</span>"
+    ]
+  }
+]

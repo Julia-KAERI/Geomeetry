@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir : docs
 
 book:
   title: "기하학"
@@ -14,10 +15,10 @@ book:
       chapters:
       - src/part1/affine_space.qmd
 
-    - part: src/figure/figure.qmd
-      chapters:
-      - src/figure/figure_part1_1.qmd
-      - src/figure/figure_test_01.qmd
+    # - part: src/figure/figure.qmd
+    #   chapters:
+    #   - src/figure/figure_part1_1.qmd
+    #   - src/figure/figure_test_01.qmd
 
     - src/references.qmd
 

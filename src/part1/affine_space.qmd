@@ -30,11 +30,11 @@ crossref:
 
 $\R-$ 혹은 $\C-$ 벡터공간 $E$ 에 포함되는 원소를 모두 포함하는 집합 $\mathcal{E}$ 에 $\Theta : \mathcal{E} \times \mathcal{E} \to E$ 이 다음을 만족하면 $\mathcal{E}$ 를 **아핀 공간(affine space)** 라고 한다.
 
-&emsp;($1$) 임의의 고정된 $A\in E$ 에 대해 $\Theta_A(B) = \Theta(A,\,B)$ 는 $\mathcal{E}\mapsto E$ 인 전단사 함수이다.
+&emsp;($1$) 임의의 고정된 $A\in \mathcal{E}$ 에 대해 $\Theta_A(B) = \Theta(A,\,B)$ 는 $\mathcal{E}\mapsto E$ 인 전단사 함수이다.
 
-&emsp;($2$) (**Chasles' relation**) 각각의 $A,\,B,\,C\in \mathcal{E}$ 에 대해 $\Theta (A,\,C) + \Theta(C,\,B) = \Theta(A, C)$ 이다. 
+&emsp;($2$) **샬 관계(Chasles' relation)**: 각각의 $A,\,B,\,C\in \mathcal{E}$ 에 대해 $\Theta (A,\,C) + \Theta(C,\,B) = \Theta(A, B)$ 이다. 
 
-이 때 아핀 공간 $\mathcal{E}$ 를 $\langle \mathcal{E},\, E,\,\Theta\rangle$ 혹은 $\mathcal{E}(E,\,\Theta)$ 로 표현하며 $E$ 를 $\mathcal{E}$ 의 **방향(direction)** 혹은 $\mathcal{E}$ 에 **내재된 벡터공간 (underlying vector space)** 라고 한다. $\mathcal{E}$ 의 원소를 **점(point)** 이라고 하며 $E$ 의 차원을 $\mathcal{E}$ 의 차원 이라고 하고 $\dim(\mathcal{E})$ 라고 표기한다. 그리고 $\Theta (A,\,B)$ 를 $\overrightarrow{AB}$ 로 쓴다.
+이 때 아핀 공간 $\mathcal{E}$ 를 $\langle \mathcal{E},\, E,\,\Theta\rangle$ 혹은 $\mathcal{E}(E,\,\Theta)$ 로 표현하며 $E$ 를 $\mathcal{E}$ 의 **방향(direction)** 혹은 $\mathcal{E}$ 에 **내재된 벡터공간 (underlying vector space)** 라고 한다. $\mathcal{E}$ 의 원소를 **점(point)** 이라고 하며 벡터공간 $E$ 의 차원을 $\mathcal{E}$ 의 차원 이라고 하고 $\dim(\mathcal{E})$ 라고 표기한다. 그리고 $\Theta (A,\,B)$ 를 $\overrightarrow{AB}$ 로 쓴다.
 :::
 :::
 
@@ -55,13 +55,11 @@ $\Theta(A, A)=\overrightarrow{AA}=\overrightarrow{0}$ 이다. 또한 $\overright
 
 ::: {.proof}
 
-$A=B=C$ 라 놓으면 $\overrightarrow{AA}=0$ 임을 보일 수 있다. $\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}$ 에서 $C=A$ 로 놓으면 $\overrightarrow{AB}+\overrightarrow{BA}= \overrightarrow{AA}=\overrightarrow{0}$ 이므로 $\overrightarrow{AB}= - \overrightarrow{BA}$ 이다. $\square$
+$A=B=C$ 라 놓으면 $\overrightarrow{AA}=\overrightarrow{0}$ 임을 보일 수 있다. $\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}$ 에서 $C=A$ 로 놓으면 $\overrightarrow{AB}+\overrightarrow{BA}= \overrightarrow{AA}=\overrightarrow{0}$ 이므로 $\overrightarrow{AB}= - \overrightarrow{BA}$ 이다. $\square$
 
 :::
 
 </br>
-
-다음 명제는 정의에 의해 자명하다.
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -71,7 +69,14 @@ $A=B=C$ 라 놓으면 $\overrightarrow{AA}=0$ 임을 보일 수 있다. $\overri
 
 :::
 
-</div></br>
+</div>
+
+::: {.proof}
+@def-AG_affine_space 의 ($1$). $\square$
+
+:::
+
+</br>
 
 이제 아핀공간을 이해하기 위해 몇가지 예를 들어 보자.
 
@@ -79,7 +84,7 @@ $A=B=C$ 라 놓으면 $\overrightarrow{AA}=0$ 임을 보일 수 있다. $\overri
 
 :::{#exm-AG_affine_space_0}
 
-공집합은 임의의 벡터공간에 대해 아핀공간이며 이 때 그 차원은 $0$ 으로 정의한다.
+공집합은 임의의 벡터공간에 대해 아핀공간이며 차원이 없는 것으로 간주한다. 
 
 :::
 
@@ -122,7 +127,7 @@ $$
 
 $$
 \overrightarrow{AB}=\overrightarrow{DC} \iff \overrightarrow{AD}=\overrightarrow{BC}.
-$$
+$$ {#eq-AG_parallogram_rule}
 
 여기서 각각의 등식이 성립하는 사각형 $AA'B'B$ 를 **평행사면형(paralleogram)** 이라고 한다.
 :::
@@ -159,9 +164,9 @@ see @exr-audin_1_47.
 
 </br>
 
-### 아핀 공간의 벡터공간화와 아핀부분공간 {#sec-AG_vectorization}
+### 아핀 공간의 벡터공간화와 아핀부분공간 {#sec-AG_vectorization_and_subspace}
 
-아핀 공간을 쉽게 설명하면 영벡터가 없는 벡터공간이라고들 한다. 그렇다면 아핀 공간에 어떤 임의의 영벡터를 정하면 아핀공간은 벡터공간이 될까? 정답은 그렇다 이다.
+@prp-AG_affile_space_2 를 생각하자. 정해진 $A\in \mathcal{E}$ 에 대해 $\Theta_A(\mathcal{E})=E$ 인 벡터 공간이다. 
 
 ::: {.callout-note appearance="minimal"}
 ::: {#def-AG_vectorialization}
@@ -171,7 +176,7 @@ see @exr-audin_1_47.
 아핀 공간 $\mathcal{E}$ 의 한 점 $A\in \mathcal{E}$ 에 대해 아래와 같은 집합 $\mathcal{E}_A$ 를 $\mathcal{E}$ 의 $A$ 에 대한 벡터공간 이라고 하며 이 과정을 **벡터공간화 (vectorialization)** 이라고 한다.
 
 $$
-\mathcal{E}_A = \{\overrightarrow{AX} : X\in \mathcal{E}\}.
+\mathcal{E}_A := \{\overrightarrow{AX} : X\in \mathcal{E}\} = \Theta_A(\mathcal{E}).
 $$
 
 :::
@@ -196,9 +201,10 @@ $$
 :::
 :::
 
-</br> 
+</br>
 
-@exm-AG_affine_space_0 에서 보았듯이 공집합이라면 자명한 아핀공간이다. 이제 공집합이 아닌 경우를 살펴 보자.
+
+@exm-AG_affine_space_0 에서 보았듯이 공집합이라면 자명한 아핀공간이기 때문에 더이상 고려할 것이 없다. 이제 공집합이 아닌 경우를 살펴 보자.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -228,25 +234,25 @@ $$
 
 </br>
 
-즉 @lem-AG_existance_of_affine_subspace_1 에 의하면 모든 $X\in \mathcal{F}$ 에 대해 $\Theta_X(\mathcal{F})$ 는 동일하므로 $\mathcal{F}$ 에 맞는 벡터공간 $F$ 와 chasles' relation $\Theta_\mathcal{F}$ 가 존재한다는 것을 알 수 있다. 즉 $\mathcal{F}$ 는 아핀공간이다. 또한 $\mathcal{F}$ 에 포함되는 한 점에 의해 charles' relation 이 유일하게 정해지므로 이 아핀공간도 유일하게 정해진다는 것을 알 수 있다. 이를 정리하면 다음과 같다.
-
-</br>
+즉 @lem-AG_existance_of_affine_subspace_1 에 의하면 일단 한 $A\in \mathcal{E}$ 에 대해 $F=\Theta_A(\mathcal{F})$ 가 벡터공간이면 모든 $X\in \mathcal{F}$ 에 대해 $\Theta_X(\mathcal{F}) = F$ 므로 $\mathcal{F}$ 에 맞는 벡터공간 $F$ 와 샬 관계 $\Theta_\mathcal{F}$ 가 존재한다는 것을 알 수 있다. 즉 $\mathcal{F}$ 는 아핀공간이다. 이를 정리하면 다음과 같다.
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-AG_existance_of_affine_subspace_1}
 
-아핀공간 $\mathcal{E}(E,\,\Theta)$ 에 대해 $\mathcal{F}\subset\mathcal{E}$ 일 때 $A\in \mathcal{F}$ 에 대해 $\Theta_A(\mathcal{F})$ 가 $E$ 의 벡터부분공간이며 $\Theta_A(\mathcal{F})$ 를 내포하고 $A$ 를 지나는 아핀공간 $\mathcal{F}(\Theta_A(\mathcal{F}),\, \Theta)$ 는 유일하게 정해진다. 
+아핀공간 $\mathcal{E}(E,\,\Theta)$ 에 대해 $\mathcal{F}\subset\mathcal{E}$ 일 때, 어떤 $A\in \mathcal{F}$ 에 대해 $\Theta_A(\mathcal{F})$ 가 $E$ 의 벡터부분공간이면 $\mathcal{F}(\Theta_A(\mathcal{F}),\,\Theta)$ 는 $\mathcal{E}$ 의 아핀부분공간이다.
 :::
 
 </div></br>
+
+아핀공간의 부분집합으로부터 아핀부분집합이 되는 성질을 보였다. 이제 아핀공간에 내재된 벡터공간의 벡터부분공간으로부터 아핀부분공간을 구성하는 것을 알아보자.
 
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-AG_existance_of_affine_subspace_2}
 
-아핀공간 $\mathcal{E}(E,\,\Theta)$ 에 대해 $F$ 가 $E$ 의 부분벡터공간이며 $A\in \mathcal{E}$ 일 때 $F$ 를 내포하며 $A$ 를 지나는 아핀부분공간이 유일하게 존재한다.
+아핀공간 $\mathcal{E}(E,\,\Theta)$ 에 대해 $F$ 가 $E$ 의 벡터부분공간이며 $A\in \mathcal{E}$ 일 때, $F$ 를 내포하며 $A$ 를 지나는 아핀부분공간이 유일하게 존재한다.
 
 :::
 
@@ -254,25 +260,36 @@ $$
 
 ::: {.proof}
 
-$\mathcal{F}$ 가 $A$ 를 지나며 $F$ 가 내재된 아핀부분공간이라고 하자. 그렇다면 $\Theta_A(\mathcal{F})=F$ 이며,
+$\mathcal{F}\subset \mathcal{E}$ 를 다음과 같이 정하면 $\mathcal{F}$ 는 $F$ 를 내포하며 $A$ 를 지나는 $\mathcal{E}$ 의 아핀부분공간이다.
 
 $$
-\mathcal{F} = \{X\in \mathcal{E} : \overrightarrow{AX}\in F\}
+\mathcal{F} := \left\{X\in \mathcal{E} : \overrightarrow{AX}\in F\right\}.
 $$
 
-이다. 역으로 위의 $\mathcal{F}$ 는 $F$ 를 내포하며 $A$ 를 지나는 아핀부분공간이다. $\square$
+이제 $\mathcal{F}'(F,\,\Theta)$ 이 $A$ 를 지나는 아핀공간이라고 하자. $Y\in \mathcal{F}'$ 이면 $\overrightarrow{AY}\in F$ 이며 따라서 $Y\in \mathcal{F}$ 이다. $X\in \mathcal{F}$ 이면 $\overrightarrow{AX}\in F$ 이며 따라서 $X\in \mathcal{F}'$ 이다. 즉 $\mathcal{F}=\mathcal{F}'$ 이다. $\square$
+
 
 :::
 
 </br>
 
+::: {.callout-note appearance="minimal"}
+
+::: {#def-AG_line_and_plaine}
+#### 아핀공간의 선과 평면
+
+모든 아핀공간 $\mathcal{E}$ 의 점은 그 자체로 아핀공간이다. 아핀공간의 1차원 부분공간을 **선(line)** 이라고 하고 아핀공간의 2차원 부분공간을 **평면(plaine)** 이라고 한다.
+
+:::
+:::
+
+
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-:::{#exm-AG_affine_subspace_1}
+::: {#exm-AG_0_dim_subspace}
 
-#### 영차원 부분공간과 선
+아핀공간의 0차원 부분공간은 점이다. $0$ 차원 벡터공간은 영벡터로만 이루어진 벡터공간이며, 따라서 영벡터에 해당하는 한 점으로만 이루어진 아핀공간이다. 
 
-$0$ 차원 아핀공간은 유일한 점을 가진다. 모든 아핀공간 $\mathcal{E}$ 의 점은 그 자체로 아핀공간이다. 아핀공간의 1차원 부분공간을 **선(line)** 이라고 하고 아핀공간의 2차원 부분공간을 **평면(plaine)** 이라고 한다.
 
 :::
 
@@ -347,10 +364,27 @@ $S$ 가 $\mathcal{E}$ 의 부분집합일 때 $S$ 를 포함하는 모든 아핀
 
 </div></br>
 
-@prp-AG_smallest_affine_subspace_contains_a_subset 의 $S$ 를 포함하는 가장 작은 아핀부분공간을 $S$ 에 의해 생성되는 아핀공간이라고 하고 $\langle S\rangle$ 로 쓴다. 예를 들어 $S=\{A_0,\ldots,\,A_k\}$ 라면 $\langle S\rangle$ 은 $S$ 에 의해 span 되며 $A_0$ 를 포함하는 아핀공간이다. 이 때 $\langle S\rangle$ 은 $\overrightarrow{A_0A_1},\ldots,\,\overrightarrow{A_0A_k}$ 에 span 되는 벡터공간을 내재한다. 이 경우 $\langle S\rangle$ 의 차원은 $k$ 보다 같거나 작다.
+::: {.callout-note appearance="minimal"}
+::: {#def-AG_generation_of_affine_subspace}
+
+#### 아핀공간의 생성
+
+
+아핀공간 $\mathcal{E}$ 와 $S \subset \mathcal{E}$ 에 대해 $S$ 를 포함하는 가장 작은 아핀부분공간을 **$S$ 에 의해 생성되는(혹은 전개되는) 아핀공간**이라고 하고 $\langle S\rangle$ 로 표기한다
+
+:::
+:::
 
 </br>
 
+예를 들어 $S=\{A_0,\ldots,\,A_k\}$ 라면 $\langle S\rangle$ 은 $S$ 에 의해 생성되며 $A_0$ 를 포함하는 아핀공간이다. 이 때 $\langle S\rangle$ 은 $\{\overrightarrow{A_0A_1},\ldots,\,\overrightarrow{A_0A_k}\}$ 에 의해 전개(span) 되는 벡터공간을 내포한다. 이 경우 $\langle S\rangle$ 의 차원은 $k$ 보다 같거나 작다.
+
+</br>
+
+아핀공간의 합집합일 경우는 @exr-audin_1_4 를 보라. 벡터공간에서의 중요 성질인 선형독립과 같이 아핀공간에서도 어떤 성분의 독립적 성질이 존재한다.
+
+
+</br>
 
 ::: {.callout-note appearance="minimal"}
 ::: {#def-AG_affine_independency}
@@ -363,6 +397,27 @@ $k+1$ 개의 점 $\{A_0,\ldots,\,A_k\}$ 에 의해 생성되는 아핀공간의 
 :::
 
 </br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+:::{#exm-AG_affine_frame_1}
+
+직선에 대한 아핀프레임은 서로 다른 두 점이다(@exr-audin_1_3). 따라서 아핀공간 $\mathcal{E}$ 와 $A,\,B\in \mathcal{E}$ 에 대해 $\langle A,\,B\rangle$ 은 $A,\,B$ 를 잇는 직선이다. 
+
+:::
+
+</div></br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+:::{#exm-AG_affine_frame_2}
+  
+$k+1$ 개의 점이 독립일 필요충분조건은 각각의 점이 그 점을 제외한 다른 점들로 span 되는 부분공간에 포함되지 않는 것이다.(@exr-audin_1_6)
+
+:::
+
+</div>
+
 
 
 
@@ -448,8 +503,11 @@ $F_1,\,F_2$ 를 각각 $\mathcal{F}_1,\,\mathcal{F}_2$ 에 내재하는 벡터�
 </div>
 
 ::: {.solution}
+아핀공간 $\mathcal{E}=\mathcal{E}(E,\,\Theta)$ 에 대해 $\mathcal{F}\subset\mathcal{E}$ 라고 하자.
 
-($\implies$) $\mathcal{F}$ 가 $\mathcal{E}$ 의 아핀부분공간이라고 하자.
+($\implies$) $\mathcal{F}$ 가 $\mathcal{E}$ 의 아핀부분공간이고 $A,\,B\in \mathcal{F}$ 이며 $\langle A,\,B\rangle$ 은 $A,\,B$ 를 포함하는 모든 부분공간의 교집합이므로 $\langle A,\,B\rangle \subset \mathcal{F}$ 이다.
+
+($\impliedby$) 임의의 $A,\,B\in \mathcal{F}$ 에 대해 $\langle A,\,B\rangle \subset \mathcal{F}$ 임을 가정하자. 임의의 $A\in \mathcal{E}$ 에 대해 $F=\Theta_A(\mathcal{F})$ 라고 하자. $\overrightarrow{0}=\overrightarrow{AA}\in F$ 이며 임의의 $X\in \mathcal{F}$ 에 대해 $X\in \langle A,\,B\rangle$ 이므로 $-\overrightarrow{AX}\in F$ 이다. 따라서 $F$ 가 벡터공간이며, @thm-AG_existance_of_affine_subspace_2 에 의해 $\mathcal{F}$ 는 $\mathcal{E}$ 의 부분공간이다. 
 
 :::
 </br>

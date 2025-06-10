@@ -193,7 +193,7 @@ window.Quarto = {
   <li><a href="#아핀-공간의-정의와-성질" id="toc-아핀-공간의-정의와-성질" class="nav-link active" data-scroll-target="#아핀-공간의-정의와-성질"><span class="header-section-number">1.1</span> 아핀 공간의 정의와 성질</a>
   <ul class="collapse">
   <li><a href="#sec-AG_affine_space" id="toc-sec-AG_affine_space" class="nav-link" data-scroll-target="#sec-AG_affine_space"><span class="header-section-number">1.1.1</span> 아핀 공간의 정의와 기본적 성질</a></li>
-  <li><a href="#sec-AG_vectorization" id="toc-sec-AG_vectorization" class="nav-link" data-scroll-target="#sec-AG_vectorization"><span class="header-section-number">1.1.2</span> 아핀 공간의 벡터공간화와 아핀부분공간</a></li>
+  <li><a href="#sec-AG_vectorization_and_subspace" id="toc-sec-AG_vectorization_and_subspace" class="nav-link" data-scroll-target="#sec-AG_vectorization_and_subspace"><span class="header-section-number">1.1.2</span> 아핀 공간의 벡터공간화와 아핀부분공간</a></li>
   <li><a href="#sec-AG_set_properties_of_affine_space" id="toc-sec-AG_set_properties_of_affine_space" class="nav-link" data-scroll-target="#sec-AG_set_properties_of_affine_space"><span class="header-section-number">1.1.3</span> 아핀공간의 집합적 성질</a></li>
   </ul></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
@@ -231,9 +231,9 @@ window.Quarto = {
 <div class="callout-body-container">
 <div id="def-AG_affine_space" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 1.1 (아핀 공간)</strong></span> <span class="math inline">\(\mathbb{R}-\)</span> 혹은 <span class="math inline">\(\mathbb{C}-\)</span> 벡터공간 <span class="math inline">\(E\)</span> 에 포함되는 원소를 모두 포함하는 집합 <span class="math inline">\(\mathcal{E}\)</span> 에 <span class="math inline">\(\Theta : \mathcal{E} \times \mathcal{E} \to E\)</span> 이 다음을 만족하면 <span class="math inline">\(\mathcal{E}\)</span> 를 <strong>아핀 공간(affine space)</strong> 라고 한다.</p>
-<p> (<span class="math inline">\(1\)</span>) 임의의 고정된 <span class="math inline">\(A\in E\)</span> 에 대해 <span class="math inline">\(\Theta_A(B) = \Theta(A,\,B)\)</span> 는 <span class="math inline">\(\mathcal{E}\mapsto E\)</span> 인 전단사 함수이다.</p>
-<p> (<span class="math inline">\(2\)</span>) (<strong>Chasles’ relation</strong>) 각각의 <span class="math inline">\(A,\,B,\,C\in \mathcal{E}\)</span> 에 대해 <span class="math inline">\(\Theta (A,\,C) + \Theta(C,\,B) = \Theta(A, C)\)</span> 이다.</p>
-<p>이 때 아핀 공간 <span class="math inline">\(\mathcal{E}\)</span> 를 <span class="math inline">\(\langle \mathcal{E},\, E,\,\Theta\rangle\)</span> 혹은 <span class="math inline">\(\mathcal{E}(E,\,\Theta)\)</span> 로 표현하며 <span class="math inline">\(E\)</span> 를 <span class="math inline">\(\mathcal{E}\)</span> 의 <strong>방향(direction)</strong> 혹은 <span class="math inline">\(\mathcal{E}\)</span> 에 <strong>내재된 벡터공간 (underlying vector space)</strong> 라고 한다. <span class="math inline">\(\mathcal{E}\)</span> 의 원소를 <strong>점(point)</strong> 이라고 하며 <span class="math inline">\(E\)</span> 의 차원을 <span class="math inline">\(\mathcal{E}\)</span> 의 차원 이라고 하고 <span class="math inline">\(\dim(\mathcal{E})\)</span> 라고 표기한다. 그리고 <span class="math inline">\(\Theta (A,\,B)\)</span> 를 <span class="math inline">\(\overrightarrow{AB}\)</span> 로 쓴다.</p>
+<p> (<span class="math inline">\(1\)</span>) 임의의 고정된 <span class="math inline">\(A\in \mathcal{E}\)</span> 에 대해 <span class="math inline">\(\Theta_A(B) = \Theta(A,\,B)\)</span> 는 <span class="math inline">\(\mathcal{E}\mapsto E\)</span> 인 전단사 함수이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <strong>샬 관계(Chasles’ relation)</strong>: 각각의 <span class="math inline">\(A,\,B,\,C\in \mathcal{E}\)</span> 에 대해 <span class="math inline">\(\Theta (A,\,C) + \Theta(C,\,B) = \Theta(A, B)\)</span> 이다.</p>
+<p>이 때 아핀 공간 <span class="math inline">\(\mathcal{E}\)</span> 를 <span class="math inline">\(\langle \mathcal{E},\, E,\,\Theta\rangle\)</span> 혹은 <span class="math inline">\(\mathcal{E}(E,\,\Theta)\)</span> 로 표현하며 <span class="math inline">\(E\)</span> 를 <span class="math inline">\(\mathcal{E}\)</span> 의 <strong>방향(direction)</strong> 혹은 <span class="math inline">\(\mathcal{E}\)</span> 에 <strong>내재된 벡터공간 (underlying vector space)</strong> 라고 한다. <span class="math inline">\(\mathcal{E}\)</span> 의 원소를 <strong>점(point)</strong> 이라고 하며 벡터공간 <span class="math inline">\(E\)</span> 의 차원을 <span class="math inline">\(\mathcal{E}\)</span> 의 차원 이라고 하고 <span class="math inline">\(\dim(\mathcal{E})\)</span> 라고 표기한다. 그리고 <span class="math inline">\(\Theta (A,\,B)\)</span> 를 <span class="math inline">\(\overrightarrow{AB}\)</span> 로 쓴다.</p>
 </div>
 </div>
 </div>
@@ -256,20 +256,22 @@ window.Quarto = {
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A=B=C\)</span> 라 놓으면 <span class="math inline">\(\overrightarrow{AA}=0\)</span> 임을 보일 수 있다. <span class="math inline">\(\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}\)</span> 에서 <span class="math inline">\(C=A\)</span> 로 놓으면 <span class="math inline">\(\overrightarrow{AB}+\overrightarrow{BA}= \overrightarrow{AA}=\overrightarrow{0}\)</span> 이므로 <span class="math inline">\(\overrightarrow{AB}= - \overrightarrow{BA}\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A=B=C\)</span> 라 놓으면 <span class="math inline">\(\overrightarrow{AA}=\overrightarrow{0}\)</span> 임을 보일 수 있다. <span class="math inline">\(\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}\)</span> 에서 <span class="math inline">\(C=A\)</span> 로 놓으면 <span class="math inline">\(\overrightarrow{AB}+\overrightarrow{BA}= \overrightarrow{AA}=\overrightarrow{0}\)</span> 이므로 <span class="math inline">\(\overrightarrow{AB}= - \overrightarrow{BA}\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<p>다음 명제는 정의에 의해 자명하다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-AG_affile_space_2" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 1.2</strong></span> 아핀 공간 <span class="math inline">\(\mathcal{E}(E,\,\Theta)\)</span> 와 임의의 <span class="math inline">\(A\in \mathcal{E}\)</span> 에 대해 <span class="math inline">\(\Theta_A(\mathcal{E})=E\)</span> 이다.</p>
 </div>
 </div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#def-AG_affine_space" class="quarto-xref">정의&nbsp;<span>1.1</span></a> 의 (<span class="math inline">\(1\)</span>). <span class="math inline">\(\square\)</span></p>
+</div>
 <p><br></p>
 <p>이제 아핀공간을 이해하기 위해 몇가지 예를 들어 보자.</p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-AG_affine_space_0" class="theorem example">
-<p><span class="theorem-title"><strong>보기 1.1</strong></span> 공집합은 임의의 벡터공간에 대해 아핀공간이며 이 때 그 차원은 <span class="math inline">\(0\)</span> 으로 정의한다.</p>
+<p><span class="theorem-title"><strong>보기 1.1</strong></span> 공집합은 임의의 벡터공간에 대해 아핀공간이며 차원이 없는 것으로 간주한다.</p>
 </div>
 </div>
 <br>
@@ -292,9 +294,9 @@ window.Quarto = {
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-AG_parallelogram_rule" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 1.3 (평행사변형 규칙)</strong></span> 아핀 공간 <span class="math inline">\(\mathcal{E}\)</span> 와 <span class="math inline">\(A,\,B,\,C,\,D\in \mathcal{E}\)</span> 에 대해 다음이 성립한다.</p>
-<p><span class="math display">\[
+<p><span id="eq-AG_parallogram_rule"><span class="math display">\[
 \overrightarrow{AB}=\overrightarrow{DC} \iff \overrightarrow{AD}=\overrightarrow{BC}.
-\]</span></p>
+\tag{1.1}\]</span></span></p>
 <p>여기서 각각의 등식이 성립하는 사각형 <span class="math inline">\(AA'B'B\)</span> 를 <strong>평행사면형(paralleogram)</strong> 이라고 한다.</p>
 </div>
 </div>
@@ -327,9 +329,9 @@ window.Quarto = {
 </div>
 <p><br></p>
 </section>
-<section id="sec-AG_vectorization" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="sec-AG_vectorization"><span class="header-section-number">1.1.2</span> 아핀 공간의 벡터공간화와 아핀부분공간</h3>
-<p>아핀 공간을 쉽게 설명하면 영벡터가 없는 벡터공간이라고들 한다. 그렇다면 아핀 공간에 어떤 임의의 영벡터를 정하면 아핀공간은 벡터공간이 될까? 정답은 그렇다 이다.</p>
+<section id="sec-AG_vectorization_and_subspace" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="sec-AG_vectorization_and_subspace"><span class="header-section-number">1.1.2</span> 아핀 공간의 벡터공간화와 아핀부분공간</h3>
+<p><a href="#prp-AG_affile_space_2" class="quarto-xref">명제&nbsp;<span>1.2</span></a> 를 생각하자. 정해진 <span class="math inline">\(A\in \mathcal{E}\)</span> 에 대해 <span class="math inline">\(\Theta_A(\mathcal{E})=E\)</span> 인 벡터 공간이다.</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -339,7 +341,7 @@ window.Quarto = {
 <div id="def-AG_vectorialization" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 1.2 (벡터공간화)</strong></span> 아핀 공간 <span class="math inline">\(\mathcal{E}\)</span> 의 한 점 <span class="math inline">\(A\in \mathcal{E}\)</span> 에 대해 아래와 같은 집합 <span class="math inline">\(\mathcal{E}_A\)</span> 를 <span class="math inline">\(\mathcal{E}\)</span> 의 <span class="math inline">\(A\)</span> 에 대한 벡터공간 이라고 하며 이 과정을 <strong>벡터공간화 (vectorialization)</strong> 이라고 한다.</p>
 <p><span class="math display">\[
-\mathcal{E}_A = \{\overrightarrow{AX} : X\in \mathcal{E}\}.
+\mathcal{E}_A := \{\overrightarrow{AX} : X\in \mathcal{E}\} = \Theta_A(\mathcal{E}).
 \]</span></p>
 </div>
 </div>
@@ -362,7 +364,7 @@ window.Quarto = {
 </div>
 </div>
 <p><br></p>
-<p><a href="#exm-AG_affine_space_0" class="quarto-xref">보기&nbsp;<span>1.1</span></a> 에서 보았듯이 공집합이라면 자명한 아핀공간이다. 이제 공집합이 아닌 경우를 살펴 보자.</p>
+<p><a href="#exm-AG_affine_space_0" class="quarto-xref">보기&nbsp;<span>1.1</span></a> 에서 보았듯이 공집합이라면 자명한 아핀공간이기 때문에 더이상 고려할 것이 없다. 이제 공집합이 아닌 경우를 살펴 보자.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-AG_existance_of_affine_subspace_1" class="theorem lemma">
@@ -380,30 +382,42 @@ window.Quarto = {
 <p>이므로 <span class="math inline">\(v\in \Theta_B(\mathcal{F})\)</span> 이다. 즉 <span class="math inline">\(F\subset \Theta_B(\mathcal{F})\)</span> 이며 앞의 결과와 함께 <span class="math inline">\(\Theta_B(\mathcal{F})=F\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<p>즉 <a href="#lem-AG_existance_of_affine_subspace_1" class="quarto-xref">보조정리&nbsp;<span>1.1</span></a> 에 의하면 모든 <span class="math inline">\(X\in \mathcal{F}\)</span> 에 대해 <span class="math inline">\(\Theta_X(\mathcal{F})\)</span> 는 동일하므로 <span class="math inline">\(\mathcal{F}\)</span> 에 맞는 벡터공간 <span class="math inline">\(F\)</span> 와 chasles’ relation <span class="math inline">\(\Theta_\mathcal{F}\)</span> 가 존재한다는 것을 알 수 있다. 즉 <span class="math inline">\(\mathcal{F}\)</span> 는 아핀공간이다. 또한 <span class="math inline">\(\mathcal{F}\)</span> 에 포함되는 한 점에 의해 charles’ relation 이 유일하게 정해지므로 이 아핀공간도 유일하게 정해진다는 것을 알 수 있다. 이를 정리하면 다음과 같다.</p>
-<p><br></p>
+<p>즉 <a href="#lem-AG_existance_of_affine_subspace_1" class="quarto-xref">보조정리&nbsp;<span>1.1</span></a> 에 의하면 일단 한 <span class="math inline">\(A\in \mathcal{E}\)</span> 에 대해 <span class="math inline">\(F=\Theta_A(\mathcal{F})\)</span> 가 벡터공간이면 모든 <span class="math inline">\(X\in \mathcal{F}\)</span> 에 대해 <span class="math inline">\(\Theta_X(\mathcal{F}) = F\)</span> 므로 <span class="math inline">\(\mathcal{F}\)</span> 에 맞는 벡터공간 <span class="math inline">\(F\)</span> 와 샬 관계 <span class="math inline">\(\Theta_\mathcal{F}\)</span> 가 존재한다는 것을 알 수 있다. 즉 <span class="math inline">\(\mathcal{F}\)</span> 는 아핀공간이다. 이를 정리하면 다음과 같다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-AG_existance_of_affine_subspace_1" class="theorem">
-<p><span class="theorem-title"><strong>정리 1.1</strong></span> 아핀공간 <span class="math inline">\(\mathcal{E}(E,\,\Theta)\)</span> 에 대해 <span class="math inline">\(\mathcal{F}\subset\mathcal{E}\)</span> 일 때 <span class="math inline">\(A\in \mathcal{F}\)</span> 에 대해 <span class="math inline">\(\Theta_A(\mathcal{F})\)</span> 가 <span class="math inline">\(E\)</span> 의 벡터부분공간이며 <span class="math inline">\(\Theta_A(\mathcal{F})\)</span> 를 내포하고 <span class="math inline">\(A\)</span> 를 지나는 아핀공간 <span class="math inline">\(\mathcal{F}(\Theta_A(\mathcal{F}),\, \Theta)\)</span> 는 유일하게 정해진다.</p>
+<p><span class="theorem-title"><strong>정리 1.1</strong></span> 아핀공간 <span class="math inline">\(\mathcal{E}(E,\,\Theta)\)</span> 에 대해 <span class="math inline">\(\mathcal{F}\subset\mathcal{E}\)</span> 일 때, 어떤 <span class="math inline">\(A\in \mathcal{F}\)</span> 에 대해 <span class="math inline">\(\Theta_A(\mathcal{F})\)</span> 가 <span class="math inline">\(E\)</span> 의 벡터부분공간이면 <span class="math inline">\(\mathcal{F}(\Theta_A(\mathcal{F}),\,\Theta)\)</span> 는 <span class="math inline">\(\mathcal{E}\)</span> 의 아핀부분공간이다.</p>
 </div>
 </div>
 <p><br></p>
+<p>아핀공간의 부분집합으로부터 아핀부분집합이 되는 성질을 보였다. 이제 아핀공간에 내재된 벡터공간의 벡터부분공간으로부터 아핀부분공간을 구성하는 것을 알아보자.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-AG_existance_of_affine_subspace_2" class="theorem">
-<p><span class="theorem-title"><strong>정리 1.2</strong></span> 아핀공간 <span class="math inline">\(\mathcal{E}(E,\,\Theta)\)</span> 에 대해 <span class="math inline">\(F\)</span> 가 <span class="math inline">\(E\)</span> 의 부분벡터공간이며 <span class="math inline">\(A\in \mathcal{E}\)</span> 일 때 <span class="math inline">\(F\)</span> 를 내포하며 <span class="math inline">\(A\)</span> 를 지나는 아핀부분공간이 유일하게 존재한다.</p>
+<p><span class="theorem-title"><strong>정리 1.2</strong></span> 아핀공간 <span class="math inline">\(\mathcal{E}(E,\,\Theta)\)</span> 에 대해 <span class="math inline">\(F\)</span> 가 <span class="math inline">\(E\)</span> 의 벡터부분공간이며 <span class="math inline">\(A\in \mathcal{E}\)</span> 일 때, <span class="math inline">\(F\)</span> 를 내포하며 <span class="math inline">\(A\)</span> 를 지나는 아핀부분공간이 유일하게 존재한다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\mathcal{F}\)</span> 가 <span class="math inline">\(A\)</span> 를 지나며 <span class="math inline">\(F\)</span> 가 내재된 아핀부분공간이라고 하자. 그렇다면 <span class="math inline">\(\Theta_A(\mathcal{F})=F\)</span> 이며,</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\mathcal{F}\subset \mathcal{E}\)</span> 를 다음과 같이 정하면 <span class="math inline">\(\mathcal{F}\)</span> 는 <span class="math inline">\(F\)</span> 를 내포하며 <span class="math inline">\(A\)</span> 를 지나는 <span class="math inline">\(\mathcal{E}\)</span> 의 아핀부분공간이다.</p>
 <p><span class="math display">\[
-\mathcal{F} = \{X\in \mathcal{E} : \overrightarrow{AX}\in F\}
+\mathcal{F} := \left\{X\in \mathcal{E} : \overrightarrow{AX}\in F\right\}.
 \]</span></p>
-<p>이다. 역으로 위의 <span class="math inline">\(\mathcal{F}\)</span> 는 <span class="math inline">\(F\)</span> 를 내포하며 <span class="math inline">\(A\)</span> 를 지나는 아핀부분공간이다. <span class="math inline">\(\square\)</span></p>
+<p>이제 <span class="math inline">\(\mathcal{F}'(F,\,\Theta)\)</span> 이 <span class="math inline">\(A\)</span> 를 지나는 아핀공간이라고 하자. <span class="math inline">\(Y\in \mathcal{F}'\)</span> 이면 <span class="math inline">\(\overrightarrow{AY}\in F\)</span> 이며 따라서 <span class="math inline">\(Y\in \mathcal{F}\)</span> 이다. <span class="math inline">\(X\in \mathcal{F}\)</span> 이면 <span class="math inline">\(\overrightarrow{AX}\in F\)</span> 이며 따라서 <span class="math inline">\(X\in \mathcal{F}'\)</span> 이다. 즉 <span class="math inline">\(\mathcal{F}=\mathcal{F}'\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-AG_line_and_plaine" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 1.4 (아핀공간의 선과 평면)</strong></span> 모든 아핀공간 <span class="math inline">\(\mathcal{E}\)</span> 의 점은 그 자체로 아핀공간이다. 아핀공간의 1차원 부분공간을 <strong>선(line)</strong> 이라고 하고 아핀공간의 2차원 부분공간을 <strong>평면(plaine)</strong> 이라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
-<div id="exm-AG_affine_subspace_1" class="theorem example">
-<p><span class="theorem-title"><strong>보기 1.4 (영차원 부분공간과 선)</strong></span> <span class="math inline">\(0\)</span> 차원 아핀공간은 유일한 점을 가진다. 모든 아핀공간 <span class="math inline">\(\mathcal{E}\)</span> 의 점은 그 자체로 아핀공간이다. 아핀공간의 1차원 부분공간을 <strong>선(line)</strong> 이라고 하고 아핀공간의 2차원 부분공간을 <strong>평면(plaine)</strong> 이라고 한다.</p>
+<div id="exm-AG_0_dim_subspace" class="theorem example">
+<p><span class="theorem-title"><strong>보기 1.4</strong></span> 아핀공간의 0차원 부분공간은 점이다. <span class="math inline">\(0\)</span> 차원 벡터공간은 영벡터로만 이루어진 벡터공간이며, 따라서 영벡터에 해당하는 한 점으로만 이루어진 아핀공간이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -442,7 +456,22 @@ window.Quarto = {
 </div>
 </div>
 <p><br></p>
-<p><a href="#prp-AG_smallest_affine_subspace_contains_a_subset" class="quarto-xref">명제&nbsp;<span>1.7</span></a> 의 <span class="math inline">\(S\)</span> 를 포함하는 가장 작은 아핀부분공간을 <span class="math inline">\(S\)</span> 에 의해 생성되는 아핀공간이라고 하고 <span class="math inline">\(\langle S\rangle\)</span> 로 쓴다. 예를 들어 <span class="math inline">\(S=\{A_0,\ldots,\,A_k\}\)</span> 라면 <span class="math inline">\(\langle S\rangle\)</span> 은 <span class="math inline">\(S\)</span> 에 의해 span 되며 <span class="math inline">\(A_0\)</span> 를 포함하는 아핀공간이다. 이 때 <span class="math inline">\(\langle S\rangle\)</span> 은 <span class="math inline">\(\overrightarrow{A_0A_1},\ldots,\,\overrightarrow{A_0A_k}\)</span> 에 span 되는 벡터공간을 내재한다. 이 경우 <span class="math inline">\(\langle S\rangle\)</span> 의 차원은 <span class="math inline">\(k\)</span> 보다 같거나 작다.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-AG_generation_of_affine_subspace" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 1.5 (아핀공간의 생성)</strong></span> 아핀공간 <span class="math inline">\(\mathcal{E}\)</span> 와 <span class="math inline">\(S \subset \mathcal{E}\)</span> 에 대해 <span class="math inline">\(S\)</span> 를 포함하는 가장 작은 아핀부분공간을 <strong><span class="math inline">\(S\)</span> 에 의해 생성되는(혹은 전개되는) 아핀공간</strong>이라고 하고 <span class="math inline">\(\langle S\rangle\)</span> 로 표기한다</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>예를 들어 <span class="math inline">\(S=\{A_0,\ldots,\,A_k\}\)</span> 라면 <span class="math inline">\(\langle S\rangle\)</span> 은 <span class="math inline">\(S\)</span> 에 의해 생성되며 <span class="math inline">\(A_0\)</span> 를 포함하는 아핀공간이다. 이 때 <span class="math inline">\(\langle S\rangle\)</span> 은 <span class="math inline">\(\{\overrightarrow{A_0A_1},\ldots,\,\overrightarrow{A_0A_k}\}\)</span> 에 의해 전개(span) 되는 벡터공간을 내포한다. 이 경우 <span class="math inline">\(\langle S\rangle\)</span> 의 차원은 <span class="math inline">\(k\)</span> 보다 같거나 작다.</p>
+<p><br></p>
+<p>아핀공간의 합집합일 경우는 <a href="#exr-audin_1_4" class="quarto-xref">연습문제&nbsp;<span>1.3</span></a> 를 보라. 벡터공간에서의 중요 성질인 선형독립과 같이 아핀공간에서도 어떤 성분의 독립적 성질이 존재한다.</p>
 <p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -451,12 +480,23 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="def-AG_affine_independency" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.4 (아핀독립)</strong></span> <span class="math inline">\(k+1\)</span> 개의 점 <span class="math inline">\(\{A_0,\ldots,\,A_k\}\)</span> 에 의해 생성되는 아핀공간의 차원이 <span class="math inline">\(k\)</span> 일 때 <span class="math inline">\(\{A_0,\ldots,\,A_k\}\)</span> 가 <strong>아핀 독립(affine independent)</strong> 이라고 하며 이 때 <span class="math inline">\((A_0,\ldots,\,A_k)\)</span> 를 <span class="math inline">\(\mathcal{E}\)</span> 의 <strong>아핀 틀(affine frame)</strong> 이라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 1.6 (아핀독립)</strong></span> <span class="math inline">\(k+1\)</span> 개의 점 <span class="math inline">\(\{A_0,\ldots,\,A_k\}\)</span> 에 의해 생성되는 아핀공간의 차원이 <span class="math inline">\(k\)</span> 일 때 <span class="math inline">\(\{A_0,\ldots,\,A_k\}\)</span> 가 <strong>아핀 독립(affine independent)</strong> 이라고 하며 이 때 <span class="math inline">\((A_0,\ldots,\,A_k)\)</span> 를 <span class="math inline">\(\mathcal{E}\)</span> 의 <strong>아핀 틀(affine frame)</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-AG_affine_frame_1" class="theorem example">
+<p><span class="theorem-title"><strong>보기 1.6</strong></span> 직선에 대한 아핀프레임은 서로 다른 두 점이다(<a href="#exr-audin_1_3" class="quarto-xref">연습문제&nbsp;<span>1.2</span></a>). 따라서 아핀공간 <span class="math inline">\(\mathcal{E}\)</span> 와 <span class="math inline">\(A,\,B\in \mathcal{E}\)</span> 에 대해 <span class="math inline">\(\langle A,\,B\rangle\)</span> 은 <span class="math inline">\(A,\,B\)</span> 를 잇는 직선이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-AG_affine_frame_2" class="theorem example">
+<p><span class="theorem-title"><strong>보기 1.7</strong></span> <span class="math inline">\(k+1\)</span> 개의 점이 독립일 필요충분조건은 각각의 점이 그 점을 제외한 다른 점들로 span 되는 부분공간에 포함되지 않는 것이다.(<a href="#exr-audin_1_6" class="quarto-xref">연습문제&nbsp;<span>1.5</span></a>)</p>
+</div>
+</div>
 <p><br></p>
 </section>
 </section>
@@ -501,7 +541,9 @@ window.Quarto = {
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(\implies\)</span>) <span class="math inline">\(\mathcal{F}\)</span> 가 <span class="math inline">\(\mathcal{E}\)</span> 의 아핀부분공간이라고 하자.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>아핀공간 <span class="math inline">\(\mathcal{E}=\mathcal{E}(E,\,\Theta)\)</span> 에 대해 <span class="math inline">\(\mathcal{F}\subset\mathcal{E}\)</span> 라고 하자.</p>
+<p>(<span class="math inline">\(\implies\)</span>) <span class="math inline">\(\mathcal{F}\)</span> 가 <span class="math inline">\(\mathcal{E}\)</span> 의 아핀부분공간이고 <span class="math inline">\(A,\,B\in \mathcal{F}\)</span> 이며 <span class="math inline">\(\langle A,\,B\rangle\)</span> 은 <span class="math inline">\(A,\,B\)</span> 를 포함하는 모든 부분공간의 교집합이므로 <span class="math inline">\(\langle A,\,B\rangle \subset \mathcal{F}\)</span> 이다.</p>
+<p>(<span class="math inline">\(\impliedby\)</span>) 임의의 <span class="math inline">\(A,\,B\in \mathcal{F}\)</span> 에 대해 <span class="math inline">\(\langle A,\,B\rangle \subset \mathcal{F}\)</span> 임을 가정하자. 임의의 <span class="math inline">\(A\in \mathcal{E}\)</span> 에 대해 <span class="math inline">\(F=\Theta_A(\mathcal{F})\)</span> 라고 하자. <span class="math inline">\(\overrightarrow{0}=\overrightarrow{AA}\in F\)</span> 이며 임의의 <span class="math inline">\(X\in \mathcal{F}\)</span> 에 대해 <span class="math inline">\(X\in \langle A,\,B\rangle\)</span> 이므로 <span class="math inline">\(-\overrightarrow{AX}\in F\)</span> 이다. 따라서 <span class="math inline">\(F\)</span> 가 벡터공간이며, <a href="#thm-AG_existance_of_affine_subspace_2" class="quarto-xref">정리&nbsp;<span>1.2</span></a> 에 의해 <span class="math inline">\(\mathcal{F}\)</span> 는 <span class="math inline">\(\mathcal{E}\)</span> 의 부분공간이다.</p>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
